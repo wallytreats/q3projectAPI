@@ -19,6 +19,7 @@
   "homepage": "https://github.com/wallytreats/q3projectAPI#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
     "knex": "^0.13.0",
     "pg": "^7.0.1"
