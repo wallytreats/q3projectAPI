@@ -10,7 +10,7 @@ router.post('/login', (req, res, next)=>{
   .select('*')
   .where('users.email', '=', reg.body.email)
   .then(function(user){
-    if(Objext.keys(user).length === 0){
+    if(Object.keys(user).length === 0){
       res.setHeader('Content-Type', 'text/plain');
       res.send("Incorrect email or password");
     }else{
