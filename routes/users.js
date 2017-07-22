@@ -17,10 +17,15 @@ router.get('/create', (req, res, next)=>{
 
 
 router.get('/:id', (req, res, next)=>{
-  console.log(('id'));
   let id = req.params.id;
-  console.log(id);
-  res.sendStatus(200);
+  knex('users')
+  .where('users.id', id)
+  .join('water','users.id', '=', 'water.user_id')
+  .select('user_id','amount','created_at')
+  .then((water)=>{
+    console.log(water);
+  })
+
 });
 
 router.post('/:id', (req, res, next)=>{
