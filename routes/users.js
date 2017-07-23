@@ -58,7 +58,7 @@ router.post('/:id', (req, res, next)=>{
   }
   knex('users')
   .insert(waterObj)
-  .returninmg('*')
+  .returning('*')
   .then((returnObj)=>{
     res.send(returnObj);
   })
