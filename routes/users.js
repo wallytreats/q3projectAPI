@@ -6,9 +6,10 @@ const saltRounds = 8;
 const bcrypt = require('bcrypt');
 
 router.post('/login', (req, res, next)=>{
-  knex('user')
+  console.log(req.body);
+  knex('users')
   .select('*')
-  .where('users.email', '=', reg.body.email)
+  .where('users.email', req.body.email)
   .then(function(user){
     if(Object.keys(user).length === 0){
       res.setHeader('Content-Type', 'text/plain');
